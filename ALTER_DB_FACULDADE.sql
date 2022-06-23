@@ -24,3 +24,19 @@ ADD COLUMN fk_cod_telefone INT(4) NOT NULL AFTER fk_RA;
 
 ALTER TABLE telefone_aluno
 ADD CONSTRAINT fk_cod_telefone FOREIGN KEY (fk_cod_telefone)  REFERENCES telefone (cod_telefone);
+
+ALTER TABLE professor_disciplina
+MODIFY fk_cod_professor INT(4) NOT NULL,
+MODIFY fk_cod_disciplina INT(4) NOT NULL;
+
+ALTER TABLE curso_disciplina
+MODIFY fk_cod_curso INT(4) NOT NULL,
+MODIFY fk_cod_disciplina INT(4) NOT NULL;
+
+ALTER TABLE aluno_disciplina
+MODIFY fk_RA INT(4) NOT NULL,
+MODIFY fk_cod_disciplina INT(4) NOT NULL;
+
+ALTER TABLE disciplina_historico
+MODIFY fk_cod_historico INT(4) NOT NULL,
+MODIFY fk_cod_disciplina INT(4) NOT NULL;
